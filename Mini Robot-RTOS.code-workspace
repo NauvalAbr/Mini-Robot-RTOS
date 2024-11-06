@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Mini Robot"
+		},
+		{
+			"name": "uno",
+			"path": "../uno"
+		}
+	],
+	"settings": {}
+}
