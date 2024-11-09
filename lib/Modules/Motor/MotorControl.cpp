@@ -1,7 +1,7 @@
 #include "Motor/MotorControl.h"
 
 MotorControl::MotorControl(MotorDriver &rightSide, MotorDriver &leftSide) : _rightSide(rightSide), _leftSide(leftSide) {
-    _currentSpeed = 0;
+    _currentSpeed = 130;
     _maxSpeed = 255;
     _backwardLimit = 180;
     _turnFactor = 10;
@@ -28,7 +28,7 @@ void MotorControl::forward() {
 void MotorControl::backward()
 {
    int constrainedSpeed = constrain(_currentSpeed, 0, _backwardLimit);
-    _rightSide.backward(constrainedSpeed);
+    _rightSide.backward(constrainedSpeed); // value balance 105
     _leftSide.backward(constrainedSpeed);
 }
 

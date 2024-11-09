@@ -38,15 +38,15 @@ int IR::getir5value() {
 }
 
 void IR::printirvalue() {
-    Serial.print("IR1: ");
-    Serial.println(_ir1value);
-    Serial.print("IR2: ");
-    Serial.println(_ir2value);
-    Serial.print("IR3: ");
-    Serial.println(_ir3value);
-    Serial.print("IR4: ");
-    Serial.println(_ir4value);
-    Serial.print("IR5: ");
+    Serial.print(">");
+    Serial.print("IR1:");
+    Serial.print(_ir1value); 
+    Serial.print(",IR2:");
+    Serial.print(_ir2value);
+    Serial.print(",IR3:");
+    Serial.print(_ir3value);
+    Serial.print(",IR4:");
+    Serial.print(_ir4value);
+    Serial.print(",IR5:");
     Serial.println(_ir5value);
-    Serial.println("-----------------");
 }

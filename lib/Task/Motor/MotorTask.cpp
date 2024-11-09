@@ -1,7 +1,7 @@
 #include <Motor/MotorTask.h>
 
-extern int motorSpeed;
-extern int motorDirection;
+extern int motorSpeed = 100;
+extern int motorDirection = 50;
 
 MotorTask::MotorTask(MotorDriver &rightMotor, MotorDriver &leftMotor) 
     :   _rightMotor(rightMotor), 
@@ -25,19 +25,18 @@ void MotorTask::runTask(void *pvParameters)
     
     while (true)
     {
-        if (self->_currentSpeed < motorSpeed) {
-            self->_currentSpeed += 15;
-        } else if (self->_currentSpeed > motorSpeed) {
-            self->_currentSpeed -= 15;
-        }
-
-        if (self->_currentSpeed == 0) {
-            self->_motorControl.stop();
-        } else {
-            self->_motorControl.setSpeedAndDirection(self->_currentSpeed, motorDirection);
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(5));
+        self->_motorControl.forward();
+        Serial.println("Maju");
+        vTaskDelay(pdMS_TO_TICKS(3000));
+        self->_motorControl.backward();
+        Serial.println("Mundur");
+        vTaskDelay(pdMS_TO_TICKS(3000));
+        self->_motorControl.turnLeft(100);
+        Serial.println("Belok Kiri");
+        vTaskDelay(pdMS_TO_TICKS(3000));
+        self->_motorControl.turnRight(100);
+        Serial.println("Belok Kanan");
+        vTaskDelay(pdMS_TO_TICKS(3000));
     }
 }
 

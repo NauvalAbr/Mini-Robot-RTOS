@@ -10,8 +10,8 @@ class MotorTask {
     private:
         static void runTask(void *pvParameters);
 
-        const UBaseType_t _taskPriority = 8;
-        const uint32_t _taskStackSize = 256; // Reduced stack size for Arduino Nano
+        const UBaseType_t _taskPriority = 1;
+        const uint32_t _taskStackSize = 32*4; // Reduced stack size for Arduino Nano
         MotorDriver &_rightMotor;
         MotorDriver &_leftMotor;
         MotorControl _motorControl;

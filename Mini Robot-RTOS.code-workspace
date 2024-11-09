@@ -5,10 +5,6 @@
 		},
 		{
 			"path": "../Mini Robot"
-		},
-		{
-			"name": "uno",
-			"path": "../uno"
 		}
 	],
 	"settings": {}
