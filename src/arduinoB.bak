@@ -21,10 +21,10 @@
 // #include "LineFollowing/LineFollowingTask.h"
 
 //deklarasi pin motor
-// #define PINA_IN1  8
+// #define PINA_IN1  8  // Motor A 
 // #define PINA_IN2  7
 // #define PINA_PWM  5
-// #define PINB_IN1  4
+// #define PINB_IN1  4  // Motor B
 // #define PINB_IN2  2
 // #define PINB_PWM  3
 
