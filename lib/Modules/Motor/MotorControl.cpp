@@ -1,7 +1,7 @@
 #include "Motor/MotorControl.h"
 
 MotorControl::MotorControl(MotorDriver &rightSide, MotorDriver &leftSide) : _rightSide(rightSide), _leftSide(leftSide) {
-    _currentSpeed = 130;
+    _currentSpeed = 200;
     _maxSpeed = 255;
     _backwardLimit = 180;
     _turnFactor = 10;

@@ -6,7 +6,7 @@
 // #include <task.h>
 // #include <semphr.h>
 
-#define Arduino_Depan 1 // 1 for Arduino Depan (line), 0 for Arduino Belakang(ultrasonic)
+#define Arduino_Depan 0 // 1 for Arduino Depan (line), 0 for Arduino Belakang(ultrasonic)
 
 
 //------------------------------------------------------------------------------------------------------------------------------
@@ -18,8 +18,8 @@
 #include <Motor/MotorTask.h>
 
 //IR
-#include "IR/IR.h"
-#include "LineFollowing/LineFollowingTask.h"
+// #include "IR/IR.h"
+// #include "LineFollowing/LineFollowingTask.h"
 
 //deklarasi pin motor
 #define PINA_IN1  8     //Motor B Kiri
@@ -38,8 +38,8 @@ MotorControl motorControl(motorA, motorB);
 MotorTask motorTask(motorA, motorB);
 
 //definisakn pin IR
-IR ir;
-IRTask irTask(ir);
+// IR ir;
+// IRTask irTask(ir);
 
 
 
@@ -73,23 +73,23 @@ void loop() {
 #include "Ultrasonic/UltrasonicTask.h"
 
 //deklarasi pin ultrasonic
-#define ECHOR 6
-#define TRIGR 7
 #define ECHOL 2
 #define TRIGL 3
 #define ECHOF 4
 #define TRIGF 5
+#define ECHOR 6
+#define TRIGR 7
 
 //definisikan ultrasonic
-Ultrasonic ultrasonic1(ECHOR, TRIGR);	// An ultrasonic sensor HC-04
-Ultrasonic ultrasonic2(ECHOL, TRIGL);		// An ultrasonic sensor PING)))
-Ultrasonic ultrasonic3(ECHOF, TRIGF);		// An Seeed Studio ultrasonic sensor
+Ultrasonic ultrasonic1(ECHOL, TRIGL);		// An ultrasonic sensor PING)))
+Ultrasonic ultrasonic2(ECHOF, TRIGF);		// An Seeed Studio ultrasonic sensor
+Ultrasonic ultrasonic3(ECHOR, TRIGR);	    // An ultrasonic sensor HC-04
 //jalankan task untuk ultrasonic
 UltrasonicTask ultrasonicTask(ultrasonic1, ultrasonic2, ultrasonic3);
 
 void setup(){
     Serial.begin(9600);
-    Serial.println("Cek Ultrasonic: ");
+    Serial.println("Cek Ultrasonic dan Data: ");
 
     ultrasonic1.begin();
     ultrasonic2.begin();
